@@ -1,0 +1,44 @@
+{
+    "compilerOptions": {
+        "allowJs": false,
+        "allowSyntheticDefaultImports": true,
+        "experimentalDecorators": true,
+        "esModuleInterop": true,
+        "isolatedModules": true,
+        "jsx": "react-native",
+        "moduleResolution": "node",
+        "noImplicitAny": false,
+        "noImplicitReturns": true,
+        "noImplicitThis": true,
+        "noUnusedLocals": true,
+        "target": "esnext",
+        "lib": ["es6"],
+        "skipLibCheck": true,
+        "resolveJsonModule": true,
+        "removeComments": true,
+        "useDefineForClassFields": true,
+        "baseUrl": ".",
+        "paths": {
+            "@api/*": ["src/api/*"],
+            "@assets/*": ["src/assets/*"],
+            "@components/*": ["src/components/*"],
+            "@constants/*": ["src/constants/*"],
+            "@model/*": ["src/model/*"],
+            "@navigation/*": ["src/navigation/*"],
+            "@screens/*": ["src/screens/*"],
+            "@utils/*": ["src/utils/*"],
+            "@state/*": ["src/state/*"],
+            "@contexts/*": ["src/contexts/*"],
+            "@hooks/*": ["src/hooks/*"]
+        }
+    },
+    "exclude": ["node_modules"],
+    "include": [
+        "index.js",
+        "src/**/*",
+        "metro.config.js",
+        ".eslintrc.js",
+        "babel.config.js",
+        "utils/utils.ts"
+    ]
+}

@@ -1,0 +1,151 @@
+type SearchItem = {
+    _score: number;
+    thumbnail: {
+        alt_text: string;
+        width: number;
+        lqip: string;
+        height: number;
+    };
+    api_model: string;
+    is_boosted: boolean;
+    api_link: string;
+    id: number;
+    title: string;
+    timestamp: string;
+};
+
+export type SearchResponse = {
+    pagination: {
+        total: number;
+        limit: number;
+        offset: number;
+        total_pages: number;
+        current_page: number;
+    };
+    data: SearchItem[];
+};
+
+type ArtworkDataItem = {
+    id: number;
+    api_model: string;
+    api_link: string;
+    is_boosted: boolean;
+    title: string;
+    alt_titles: any;
+    thumbnail: {
+        lqip: string;
+        width: number;
+        height: number;
+        alt_text: string;
+    };
+    main_reference_number: string;
+    has_not_been_viewed_much: boolean;
+    boost_rank: any;
+    date_start: number;
+    date_end: number;
+    date_display: string;
+    date_qualifier_title: string;
+    date_qualifier_id: any;
+    artist_display: string;
+    place_of_origin: string;
+    dimensions: string;
+    medium_display: string;
+    inscriptions: string;
+    credit_line: string;
+    publication_history: string;
+    exhibition_history: string;
+    provenance_text: string;
+    publishing_verification_level: string;
+    internal_department_id: number;
+    fiscal_year: number;
+    fiscal_year_deaccession: any;
+    is_public_domain: boolean;
+    is_zoomable: boolean;
+    max_zoom_window_size: number;
+    copyright_notice: any;
+    has_multimedia_resources: boolean;
+    has_educational_resources: boolean;
+    colorfulness: number;
+    color: {
+        h: number;
+        l: number;
+        s: number;
+        percentage: number;
+        population: number;
+    };
+    latitude?: number;
+    longitude?: number;
+    latlon?: string;
+    is_on_view: boolean;
+    on_loan_display: string;
+    gallery_title: any;
+    gallery_id: any;
+    artwork_type_title: string;
+    artwork_type_id: number;
+    department_title: string;
+    department_id: string;
+    artist_id: number;
+    artist_title: string;
+    alt_artist_ids: Array<any>;
+    artist_ids: Array<number>;
+    artist_titles: Array<string>;
+    category_ids: Array<string>;
+    category_titles: Array<string>;
+    artwork_catalogue_ids: Array<any>;
+    term_titles: Array<string>;
+    style_id: string;
+    style_title: string;
+    alt_style_ids: Array<string>;
+    style_ids: Array<string>;
+    style_titles: Array<string>;
+    classification_id: string;
+    classification_title: string;
+    alt_classification_ids: Array<string>;
+    classification_ids: Array<string>;
+    classification_titles: Array<string>;
+    subject_id: string;
+    alt_subject_ids: Array<string>;
+    subject_ids: Array<string>;
+    subject_titles: Array<string>;
+    material_id: string;
+    alt_material_ids: Array<string>;
+    material_ids: Array<string>;
+    material_titles: Array<string>;
+    technique_id?: string;
+    alt_technique_ids: Array<string>;
+    technique_ids: Array<string>;
+    technique_titles: Array<string>;
+    theme_titles: Array<string>;
+    image_id: string;
+    alt_image_ids: Array<any>;
+    document_ids: Array<string>;
+    sound_ids: Array<string>;
+    video_ids: Array<any>;
+    text_ids: Array<string>;
+    section_ids: Array<number>;
+    section_titles: Array<string>;
+    site_ids: Array<any>;
+    suggest_autocomplete_all: Array<{
+        input: Array<string>;
+        contexts: {
+            groupings: Array<string>;
+        };
+        weight?: number;
+    }>;
+    last_updated_source: string;
+    last_updated: string;
+    timestamp: string;
+    suggest_autocomplete_boosted?: string;
+};
+
+export type GetArtworksResponse = {
+    pagination: {
+        total: number;
+        limit: number;
+        offset: number;
+        total_pages: number;
+        current_page: number;
+        next_url: string;
+    };
+    data: ArtworkDataItem[];
+};
