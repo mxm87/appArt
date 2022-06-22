@@ -5,6 +5,8 @@ What you will find here:
 - UI (components w/ pre-defined styles, shared transitions, pull to refresh spinner)
 - In-App browser (WebView)
 
+---
+
 **[22.06.22 Update]**
 New features:
 1. Form handling:
