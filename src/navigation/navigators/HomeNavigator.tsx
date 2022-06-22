@@ -14,8 +14,7 @@ export const HomeNavigator = () => {
             initialRouteName={ROUTES.TAB_NAV}
             screenOptions={{
                 headerShown: false,
-            }}
-        >
+            }}>
             <Stack.Screen name={ROUTES.TAB_NAV} component={TabNavigator} />
             <Stack.Screen
                 name={ROUTES.DETAILS}

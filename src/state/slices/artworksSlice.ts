@@ -1,7 +1,7 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import defaultInitialState from "@state/store/initialState";
 import { RootState } from "@state/store/configureStore";
-import { ArtItem } from "@model/index";
+import { GridItem } from "@model/index";
 import { getSearchParams, GetArtworksResponse } from "@api/index";
 import { TThunkAPI } from "../types";
 
@@ -11,7 +11,7 @@ export const getArtworks = createAsyncThunk<
     TThunkAPI
 >("artworks/get", async (_, { extra: { apiService } }) => {
     const searchResults = await apiService.searchArtworks(getSearchParams());
-    const artworkIDs = searchResults.data.map((result) => result.id);
+    const artworkIDs = searchResults.data.map(result => result.id);
 
     return apiService.getArtworks({
         ids: artworkIDs,
@@ -31,7 +31,7 @@ const extractData = (payload: GetArtworksResponse) => {
 };
 
 export interface ArtworksState {
-    data: ArtItem[];
+    data: GridItem[];
     loading: boolean;
 }
 
@@ -41,17 +41,18 @@ export const artworksSlice = createSlice({
     name: "artworks",
     initialState,
     reducers: {},
-    extraReducers: {
-        [getArtworks.pending.toString()]: (state) => {
-            state.loading = true;
-        },
-        [getArtworks.fulfilled.toString()]: (state, action) => {
-            state.data = extractData(action.payload);
-            state.loading = false;
-        },
-        [getArtworks.rejected.toString()]: (state) => {
-            state.loading = false;
-        },
+    extraReducers: builder => {
+        builder
+            .addCase(getArtworks.pending, state => {
+                state.loading = true;
+            })
+            .addCase(getArtworks.fulfilled, (state, action) => {
+                state.data = extractData(action.payload);
+                state.loading = false;
+            })
+            .addCase(getArtworks.rejected, state => {
+                state.loading = false;
+            });
     },
 });
 

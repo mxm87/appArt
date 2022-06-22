@@ -8,6 +8,18 @@ type RoundButtonProps = {
     type: "close" | "back" | "info";
 };
 
+export const RoundButton = ({ onPress, type }: RoundButtonProps) => {
+    return (
+        <TouchableOpacity onPress={onPress} style={styles.button}>
+            <Icon
+                name={variants[type].icon}
+                color={COLORS.BUTTON}
+                size={variants[type].size}
+            />
+        </TouchableOpacity>
+    );
+};
+
 const variants = {
     close: {
         icon: "x",
@@ -21,18 +33,6 @@ const variants = {
         icon: "book-open",
         size: 24,
     },
-};
-
-export const RoundButton = ({ onPress, type }: RoundButtonProps) => {
-    return (
-        <TouchableOpacity onPress={onPress} style={styles.button}>
-            <Icon
-                name={variants[type].icon}
-                color={COLORS.BUTTON}
-                size={variants[type].size}
-            />
-        </TouchableOpacity>
-    );
 };
 
 const styles = StyleSheet.create({

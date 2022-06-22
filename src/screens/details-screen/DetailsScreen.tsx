@@ -24,9 +24,10 @@ import {
 } from "@components/index";
 import { COLORS, S_WIDTH, S_HEIGT, BASE_URL } from "@constants/index";
 import { SharedElement } from "react-navigation-shared-element";
-import { ArtItem } from "@model/index";
+import { GridItem } from "@model/index";
 import { getImageURI } from "@api/utils";
 import ROUTES from "@navigation/routes";
+import { getFavoriteItem } from "@utils/helpers";
 
 export const DetailsScreen = ({ navigation, route }) => {
     const artworks = useAppSelector(selectArtworksData);
@@ -59,11 +60,11 @@ export const DetailsScreen = ({ navigation, route }) => {
         });
     };
 
-    const onFavoritePress = (item: ArtItem, active: boolean) => {
-        dispatch(active ? removeItem(item.id) : addItem(item));
+    const onFavoritePress = (item: GridItem, active: boolean) => {
+        dispatch(active ? removeItem(item) : addItem(getFavoriteItem(item)));
     };
 
-    const renderItem: ListRenderItem<ArtItem> = ({ item, index }) => {
+    const renderItem: ListRenderItem<GridItem> = ({ item, index }) => {
         const active = favoritesIds.includes(item.id);
         return (
             <View>
@@ -97,7 +98,7 @@ export const DetailsScreen = ({ navigation, route }) => {
 
     const onMomentumScrollEnd = (e: NativeSyntheticEvent<NativeScrollEvent>) =>
         (currentScrollIndex.current = Math.round(
-            e.nativeEvent.contentOffset.x / S_WIDTH
+            e.nativeEvent.contentOffset.x / S_WIDTH,
         ));
 
     return (

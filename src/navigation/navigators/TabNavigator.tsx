@@ -1,7 +1,7 @@
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { createSharedElementStackNavigator } from "react-navigation-shared-element";
-import { HomeScreen, FavoritesScreen } from "@screens/index";
+import { HomeScreen, FavoritesScreen, AccountScreen } from "@screens/index";
 import Icon from "react-native-vector-icons/Feather";
 import { COLORS } from "@constants/index";
 import ROUTES from "../routes";
@@ -27,8 +27,17 @@ const TabNavigator = () => {
             screenOptions={{
                 tabBarActiveTintColor: COLORS.ACTIVE,
                 headerShown: false,
-            }}
-        >
+                tabBarStyle: { paddingHorizontal: 4 },
+            }}>
+            <Tab.Screen
+                name={ROUTES.ACCOUNT}
+                component={AccountScreen}
+                options={{
+                    tabBarIcon: ({ color, size }) => (
+                        <Icon name="user" color={color} size={size} />
+                    ),
+                }}
+            />
             <Tab.Screen
                 name={ROUTES.HOME_WRAPPER}
                 component={SharedHomeScreen}

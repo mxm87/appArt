@@ -1,5 +1,9 @@
 #import "AppDelegate.h"
 
+// [@react-native-firebase/app] - start
+#import <Firebase.h>
+// [@react-native-firebase/app] - end
+
 // [react-native-bootsplash] - start
 #import "RNBootSplash.h"
 // [react-native-bootsplash] - end
@@ -31,6 +35,13 @@ static void InitializeFlipper(UIApplication *application) {
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+  
+  // [@react-native-firebase/app] - start
+  if ([FIRApp defaultApp] == nil) {
+    [FIRApp configure];
+  }
+  // [@react-native-firebase/app] - end
+  
 #ifdef FB_SONARKIT_ENABLED
   InitializeFlipper(application);
 #endif

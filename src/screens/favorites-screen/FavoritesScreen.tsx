@@ -30,7 +30,7 @@ export const FavoritesScreen = ({ navigation }) => {
 
     const onRemovePress = (id: number) => {
         LayoutAnimation.configureNext(LayoutAnimation.Presets.easeInEaseOut);
-        dispatch(removeItem(id));
+        dispatch(removeItem({ id }));
     };
 
     const renderItem: ListRenderItem<FavoriteItem> = ({ item }) => {
@@ -39,8 +39,7 @@ export const FavoritesScreen = ({ navigation }) => {
                 <TouchableOpacity
                     activeOpacity={0.6}
                     onPress={() => onArtworkPress(item.id)}
-                    style={styles.touchWrapper}
-                >
+                    style={styles.touchWrapper}>
                     <FastImage
                         source={{ uri: getImageURI(item.image_id, true) }}
                         resizeMode="cover"
@@ -53,8 +52,7 @@ export const FavoritesScreen = ({ navigation }) => {
                 </TouchableOpacity>
                 <TouchableOpacity
                     onPress={() => onRemovePress(item.id)}
-                    style={styles.deleteButton}
-                >
+                    style={styles.deleteButton}>
                     <Icon name="trash-2" color={COLORS.ICON} size={24} />
                 </TouchableOpacity>
             </View>

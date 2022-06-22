@@ -2,6 +2,8 @@ const palette = {
     translucentWhite: "rgba(255,255,255,0.8)",
     moreTranslucentWhite: "rgba(255,255,255,0.5)",
     translucentBlack: "rgba(0,0,0,0.8)",
+    white: "#FFFFFF",
+    black: "#000000",
     gray: "#F2F2F2",
     alabaster: "#F9F9F9",
     doveGray: "#707070",
@@ -9,6 +11,7 @@ const palette = {
     alto: "#DDDDDD",
     shiraz: "#C20A2A",
     amaranth: "#EA2B4D",
+    ao: "#008038",
 };
 
 export const COLORS = {
@@ -19,6 +22,10 @@ export const COLORS = {
     ART_BG: palette.alto,
     BUTTON: palette.translucentBlack,
     BUTTON_WRAPPER: palette.moreTranslucentWhite,
+    INPUT: palette.translucentBlack,
     ICON: palette.emperorGray,
     ICON_BG: palette.alabaster,
+    CRITERIA: palette.ao,
+    WHITE: palette.white,
+    BLACK: palette.black,
 };
