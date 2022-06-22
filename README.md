@@ -10,9 +10,9 @@ New features:
 
 ---
 
-https://user-images.githubusercontent.com/47810008/175026480-97b53055-155e-49a4-bcb1-3d0b892b1e30.mp4
-
 This app is based on The Art Institute of Chicago API. You can fetch 8 random artworks, save favorite ones, get full description via in-app browser.
+
+https://user-images.githubusercontent.com/47810008/175026480-97b53055-155e-49a4-bcb1-3d0b892b1e30.mp4
 
 What you will find here:
 - State management w/ API calls and persistence (Redux Toolkit, AsyncThunk, Redux Persist)
