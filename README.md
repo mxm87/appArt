@@ -10,7 +10,7 @@ New features:
 
 ---
 
-<img src="https://user-images.githubusercontent.com/47810008/175025731-1f872240-9096-41f8-be52-0bb281aef1e0.gif" width="319" height="624">
+https://user-images.githubusercontent.com/47810008/175026480-97b53055-155e-49a4-bcb1-3d0b892b1e30.mp4
 
 This app is based on The Art Institute of Chicago API. You can fetch 8 random artworks, save favorite ones, get full description via in-app browser.
 
